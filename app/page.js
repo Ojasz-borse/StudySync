@@ -77,12 +77,12 @@ export default function CollegeChatbot() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6">
           <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="p-3 bg-blue-600 rounded-full">
+            <div className="p-3 bg-gray-600 rounded-full">
               <GraduationCap className="h-8 w-8 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-gray-800">College Assistant</h1>
@@ -93,16 +93,16 @@ export default function CollegeChatbot() {
         {/* Chat Container */}
         <Card className="h-[600px] flex flex-col shadow-xl">
           {/* Chat Header */}
-          <div className="p-4 border-b bg-blue-600 text-white rounded-t-lg">
+          <div className="p-4 border-b bg-gray-600 text-white rounded-t-lg">
             <div className="flex items-center gap-3">
               <Avatar className="h-10 w-10">
-                <AvatarFallback className="bg-blue-700">
+                <AvatarFallback className="bg-gray-700">
                   <Bot className="h-5 w-5" />
                 </AvatarFallback>
               </Avatar>
               <div>
                 <h3 className="font-semibold">College Bot</h3>
-                <p className="text-sm text-blue-100">Online • Ready to help</p>
+                <p className="text-sm text-gray-100">Online • Ready to help</p>
               </div>
             </div>
           </div>
@@ -125,18 +125,18 @@ export default function CollegeChatbot() {
 
                   <div
                     className={`max-w-[70%] rounded-lg p-3 ${
-                      message.sender === "user" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-800"
+                      message.sender === "user" ? "bg-gray-600 text-white" : "bg-gray-100 text-gray-800"
                     }`}
                   >
                     <p className="text-sm leading-relaxed">{message.text}</p>
-                    <p className={`text-xs mt-1 ${message.sender === "user" ? "text-blue-100" : "text-gray-500"}`}>
+                    <p className={`text-xs mt-1 ${message.sender === "user" ? "text-gray-100" : "text-gray-500"}`}>
                       {message.timestamp}
                     </p>
                   </div>
 
                   {message.sender === "user" && (
                     <Avatar className="h-8 w-8 mt-1">
-                      <AvatarFallback className="bg-blue-600">
+                      <AvatarFallback className="bg-gray-600">
                         <User className="h-4 w-4 text-white" />
                       </AvatarFallback>
                     </Avatar>
@@ -148,8 +148,8 @@ export default function CollegeChatbot() {
               {isTyping && (
                 <div className="flex gap-3 justify-start">
                   <Avatar className="h-8 w-8 mt-1">
-                    <AvatarFallback className="bg-blue-100">
-                      <Bot className="h-4 w-4 text-blue-600" />
+                    <AvatarFallback className="bg-gray-100">
+                      <Bot className="h-4 w-4 text-gray-600" />
                     </AvatarFallback>
                   </Avatar>
                   <div className="bg-gray-100 rounded-lg p-3">
@@ -204,7 +204,7 @@ export default function CollegeChatbot() {
               <Button
                 onClick={handleSendMessage}
                 disabled={!inputMessage.trim() || isTyping}
-                className="bg-blue-600 hover:bg-blue-700"
+                className="bg-gray-600 hover:bg-gray-700"
               >
                 <Send className="h-4 w-4" />
               </Button>
